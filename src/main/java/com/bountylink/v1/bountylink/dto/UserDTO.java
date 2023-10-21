@@ -13,18 +13,16 @@ import lombok.Setter;
 public class UserDTO {
 
 
+
     private String username;
 
     private String email;
 
     private String password;
 
-    private boolean flag;
-
-    public UserDTO(String username, String email, String password, boolean flag) {
+    public UserDTO(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.flag = flag;
     }
 }
