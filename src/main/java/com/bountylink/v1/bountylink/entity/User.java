@@ -23,9 +23,12 @@ public class User {
 
     private String password;
 
-    public User(String username, String email, String password) {
+    private boolean flag = false;
+
+    public User(String username, String email, String password, boolean flag) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.flag = flag;
     }
 }

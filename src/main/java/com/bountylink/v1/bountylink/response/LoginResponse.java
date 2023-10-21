@@ -10,4 +10,6 @@ import lombok.*;
 public class LoginResponse {
     String message;
     Boolean status;
+
+
 }
