@@ -9,9 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class LoginDTO {
-    private String email;
-    private String username;
-    private String password;
-    private boolean flag;
+public class EmailDTO {
+    private String toEmail;
+    private String subject;
+    private String body;
+
 }

@@ -24,7 +24,6 @@ import java.util.UUID;
 
 
 @Service
-
 public class UserImpl implements UserService {
 
     @Autowired
@@ -85,7 +84,6 @@ public class UserImpl implements UserService {
             if (isPasswordRight) {
                 Optional<User> existingUser= Optional.ofNullable(userRepository.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword));
                 if (existingUser.isPresent() && existingUser.get().isFlag() == true) {
-
                     return new LoginResponse("Login Success", true);
                 } else if (existingUser.isPresent() && existingUser.get().isFlag()==false){
                     return new LoginResponse("Email not verified", false);
@@ -93,10 +91,10 @@ public class UserImpl implements UserService {
                     return new LoginResponse("Login Failed", false);
                 }
             } else {
-                return new LoginResponse("password Not Match", false);
+                return new LoginResponse("Wrong password", false);
             }
         }else {
-            return new LoginResponse("Email not exits", false);
+            return new LoginResponse("Email does not exist", false);
         }
     }
 

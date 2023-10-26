@@ -9,13 +9,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-User findByEmail(String email);
+    User findByEmail(String email);
+
+    User findByUsername(String username);
 
     User findOneByEmailAndPassword(String email, String encodedPassword);
 
-   /* @Transactional
-    @Modifying
-    @Query("UPDATE User a " +
-            "SET a.flag = 1 WHERE a.email = ?1")
-    int enableAppUser(String email);*/
+
 }
